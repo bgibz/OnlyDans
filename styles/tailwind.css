@@ -1,0 +1,26 @@
+@tailwind base;
+
+h1 {
+  @apply text-2xl;
+}
+h2 {
+  @apply text-xl;
+}
+h3 {
+  @apply text-lg;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+.post_img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: width 800px;
+}
+.post_img_wrap {
+  width: 90%;
+  margin: 0 auto;
+}
