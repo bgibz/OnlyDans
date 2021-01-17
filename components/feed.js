@@ -1,7 +1,8 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment, faHeart, faShare } from "@fortawesome/free-solid-svg-icons";
-import { Player, BigPlayButton } from "video-react";
+import ReactPlayer from "react-player/lazy";
+//import { Player, BigPlayButton } from "video-react";
 
 export default function Feed({ allPostsData }) {
   return (
@@ -24,9 +25,7 @@ export default function Feed({ allPostsData }) {
               </div>
               <div>
                 <div className="mb-4">
-                  <p className="mb-6">
-                    {content} {mediaformat}
-                  </p>
+                  <p className="mb-6">{content}</p>
                   {mediaformat == "jpg" ? (
                     <div>
                       {" "}
@@ -49,11 +48,14 @@ export default function Feed({ allPostsData }) {
                       {" "}
                       <div>
                         <div className="flex border border-solid border-grey rounded object-center bg-gray-200">
-                          <div className="object-center p-3 post_img_wrap">
-                            <video width="320" height="240" controls>
-                              <source src={media} type="video/mp4" />
-                              Your browser does not support the video tag.
-                            </video>
+                          <div className="player-wrapper">
+                            <ReactPlayer
+                              className="react-player"
+                              url={media}
+                              width="100%"
+                              height="100%"
+                              controls
+                            />
                           </div>
                         </div>
                       </div>

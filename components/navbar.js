@@ -11,7 +11,7 @@ import {
 export default function Navbar() {
   return (
     <>
-      <header className="border-b md:grid grid-cols-5 grid-flow-col md:items-center md:justify-between p-4 pb-0 shadow-lg md:pb-4">
+      <header className="border-b grid-cols-5 grid-flow-col md:items-center md:justify-between p-4 pb-0 shadow-lg md:pb-4">
         <div className="flex items-center justify-between mb-2 md:mb-0">
           <h1 className="leading-none text-2xl text-grey-darkest">
             <a
