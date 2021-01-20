@@ -5,12 +5,20 @@ import ReactPlayer from "react-player/lazy";
 //import { Player, BigPlayButton } from "video-react";
 
 export default function Feed({ allPostsData }) {
+  function onIconClick(icon, id) {
+    let search = icon + id;
+    let target = document.getElementById(search);
+    target.style.color === "red"
+      ? (target.style.color = "black")
+      : (target.style.color = "red");
+  }
+
   return (
     <div className="h-screen flex flex-col">
       <div>
         {allPostsData.map(
           ({ author, user, date, media, data, mediaformat, content }) => (
-            <div className="w-7/8 p-3 pl-0" key={data.id}>
+            <div className="w-7/8 p-3 pl-0" key={data.id} id={"dan" + data.id}>
               <div className="flex justify-between">
                 <div>
                   <span className="font-bold">
@@ -67,24 +75,19 @@ export default function Feed({ allPostsData }) {
                 <div className="pb-2">
                   <span className="mr-8">
                     <a
-                      href="#"
-                      className="text-grey-dark hover:no-underline hover:text-blue-light"
-                    >
-                      <FontAwesomeIcon icon={faComment}></FontAwesomeIcon>
-                    </a>
-                  </span>
-                  <span className="mr-8">
-                    <a
-                      href="#"
+                      href={void 0}
+                      onClick={() => onIconClick("heart", data.id)}
                       className="text-grey-dark hover:no-underline hover:text-red"
+                      id={"heart" + data.id}
                     >
                       <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
                     </a>
                   </span>
                   <span className="mr-8">
                     <a
-                      href="#"
-                      className="text-grey-dark hover:no-underline hover:text-teal"
+                      href={void 0}
+                      onClick={() => onIconClick("share", data.id)}
+                      className="text-grey-dark hover:no-underline hover:text-teal shareIcon"
                     >
                       <FontAwesomeIcon icon={faShare}></FontAwesomeIcon>
                     </a>
@@ -99,14 +102,3 @@ export default function Feed({ allPostsData }) {
     </div>
   );
 }
-
-function renderMedia(media) {
-  return media ? <h1>Found Media</h1> : <h1>Null Media</h1>;
-}
-
-/**
- * TODO:
- *
- * Map Posts to a post component
- * Author, Date, Body, Media
- */

@@ -13,6 +13,12 @@ h3 {
 @tailwind components;
 @tailwind utilities;
 
+@media (max-width: 480px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
 .post_img {
   display: block;
   margin-left: auto;
@@ -28,7 +34,6 @@ h3 {
   margin: auto;
 }
 .react-player {
-  position: absolute;
   top: 0;
   left: 0;
 }

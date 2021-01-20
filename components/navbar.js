@@ -11,7 +11,7 @@ import {
 export default function Navbar() {
   return (
     <>
-      <header className="border-b grid-cols-5 grid-flow-col md:items-center md:justify-between p-4 pb-0 shadow-lg md:pb-4">
+      <header className="border-b grid grid-cols-5 grid-flow-col items-center sm:justify-between p-4 pb-0 shadow-lg pb-4">
         <div className="flex items-center justify-between mb-2 md:mb-0">
           <h1 className="leading-none text-2xl text-grey-darkest">
             <a
@@ -28,28 +28,32 @@ export default function Navbar() {
         <div>
           <Link href="/">
             <a>
-              <FontAwesomeIcon icon={faHome} /> Home
+              <FontAwesomeIcon icon={faHome} />
+              <span className="hide-mobile"> Home</span>
             </a>
           </Link>
         </div>
         <div>
           <Link href="/notifications">
             <a>
-              <FontAwesomeIcon icon={faBell} /> Notifications
+              <FontAwesomeIcon icon={faBell} />
+              <span className="hide-mobile"> Notifications</span>
             </a>
           </Link>
         </div>
         <div>
           <Link href="/messages">
             <a>
-              <FontAwesomeIcon icon={faEnvelope} /> Messages
+              <FontAwesomeIcon icon={faEnvelope} />
+              <span className="hide-mobile"> Messages</span>
             </a>
           </Link>
         </div>
         <div>
           <Link href="/about">
             <a>
-              <FontAwesomeIcon icon={faInfoCircle} /> About
+              <FontAwesomeIcon icon={faInfoCircle} />
+              <span className="hide-mobile"> About</span>
             </a>
           </Link>
         </div>
