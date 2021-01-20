@@ -19,6 +19,15 @@ h3 {
   }
 }
 
+.navigation {
+  height: 90px;
+  top: 0;
+}
+.content {
+  padding-top: 90px;
+  position: relative;
+  z-index: -1;
+}
 .post_img {
   display: block;
   margin-left: auto;

@@ -5,12 +5,33 @@ import ReactPlayer from "react-player/lazy";
 //import { Player, BigPlayButton } from "video-react";
 
 export default function Feed({ allPostsData }) {
-  function onIconClick(icon, id) {
+  function onHeartClick(icon, id) {
     let search = icon + id;
     let target = document.getElementById(search);
-    target.style.color === "red"
-      ? (target.style.color = "black")
-      : (target.style.color = "red");
+    if (target.style.color === "red") {
+      target.style.color = "black";
+      target = document.getElementById("likes" + id);
+      target.innerHTML = parseInt(target.innerHTML) - 1;
+    } else {
+      target.style.color = "red";
+      target = document.getElementById("likes" + id);
+      target.innerHTML = parseInt(target.innerHTML) + 1;
+    }
+  }
+
+  function onShareClick(id) {
+    if (navigator.share) {
+      navigator
+        .share({
+          id: id,
+          text: "Post from OnlyDans",
+          url: "www.google.ca"
+        })
+        .then(() => console.log("Success!"))
+        .catch(e => console.log("Error Sharing", e));
+    } else {
+      console.log("Unable to share using this browser");
+    }
   }
 
   return (
@@ -76,17 +97,18 @@ export default function Feed({ allPostsData }) {
                   <span className="mr-8">
                     <a
                       href={void 0}
-                      onClick={() => onIconClick("heart", data.id)}
+                      onClick={() => onHeartClick("heart", data.id)}
                       className="text-grey-dark hover:no-underline hover:text-red"
                       id={"heart" + data.id}
                     >
-                      <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>{" "}
                     </a>
+                    <span id={"likes" + data.id}>{data.likes}</span>
                   </span>
                   <span className="mr-8">
                     <a
                       href={void 0}
-                      onClick={() => onIconClick("share", data.id)}
+                      onClick={async () => onShareClick(data.id)}
                       className="text-grey-dark hover:no-underline hover:text-teal shareIcon"
                     >
                       <FontAwesomeIcon icon={faShare}></FontAwesomeIcon>

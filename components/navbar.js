@@ -11,7 +11,7 @@ import {
 export default function Navbar() {
   return (
     <>
-      <header className="border-b grid grid-cols-5 grid-flow-col items-center sm:justify-between p-4 pb-0 shadow-lg pb-4">
+      <div className="border-b bg-white grid grid-cols-5 grid-flow-col items-center sm:justify-between p-4 pb-0 shadow-lg pb-4 navigation">
         <div className="flex items-center justify-between mb-2 md:mb-0">
           <h1 className="leading-none text-2xl text-grey-darkest">
             <a
@@ -57,7 +57,7 @@ export default function Navbar() {
             </a>
           </Link>
         </div>
-      </header>
+      </div>
     </>
   );
 }

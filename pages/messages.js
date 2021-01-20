@@ -1,4 +1,4 @@
-import Layout from "../components/newLayout";
+import Layout from "../components/layout";
 import Inbox from "../components/inbox";
 
 export default function Messages() {
