@@ -39,9 +39,13 @@ export default function Feed({ allPostsData }) {
       <div>
         {allPostsData.map(
           ({ author, user, date, media, data, mediaformat, content }) => (
-            <div className="w-7/8 p-3 pl-0" key={data.id} id={"dan" + data.id}>
+            <div
+              className="w-7/8 sm:p-3 sm:pl-0"
+              key={data.id}
+              id={"dan" + data.id}
+            >
               <div className="flex justify-between">
-                <div>
+                <div className="pl-2 sm:pl-0">
                   <span className="font-bold">
                     <a href="#" className="text-black">
                       {author}
@@ -54,13 +58,13 @@ export default function Feed({ allPostsData }) {
               </div>
               <div>
                 <div className="mb-4">
-                  <p className="mb-6">{content}</p>
+                  <p className="mb-6 pl-2 sm:pl-0">{content}</p>
                   {mediaformat == "jpg" ? (
                     <div>
                       {" "}
                       <div>
                         <div className="flex border border-solid border-grey rounded object-center bg-gray-200">
-                          <div className="object-center p-3 post_img_wrap">
+                          <div className="object-center p-1 post_img_wrap">
                             <img
                               src={media}
                               height="50%"
@@ -93,7 +97,7 @@ export default function Feed({ allPostsData }) {
                     <span></span>
                   )}
                 </div>
-                <div className="pb-2">
+                <div className="pb-2 sm:pl-0 pl-2">
                   <span className="mr-8">
                     <a
                       href={void 0}

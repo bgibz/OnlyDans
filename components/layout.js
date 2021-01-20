@@ -23,7 +23,7 @@ export default function Layout({ children, pageName }) {
         <Navbar></Navbar>
       </header>
       <main className="content">
-        <Body pageName={pageName}>{children}></Body>
+        <Body pageName={pageName}>{children}</Body>
       </main>
     </div>
   );
