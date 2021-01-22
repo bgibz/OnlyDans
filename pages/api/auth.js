@@ -20,9 +20,13 @@ export default (req, res) => {
     const password = req.body.password;
     let result = authUser(username, password);
     if (result) {
-      const token = jwt.sign({ userID: "001", userName: "zapzap" }, jwtSecret, {
-        expiresIn: 7200 // 2hrs
-      });
+      const token = jwt.sign(
+        { userID: "001", userName: "zapzap", msg: "Access Granted" },
+        jwtSecret,
+        {
+          expiresIn: 7200 // 2hrs
+        }
+      );
       res.status(200).json({ token });
       return;
     } else {

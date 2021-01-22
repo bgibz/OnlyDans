@@ -54,7 +54,7 @@ const Login = () => {
   });
   if (!data) return <Loading></Loading>;
   let loggedIn = false;
-  console.log(data);
+  //console.log(data);
   if (data.msg) {
     loggedIn = true;
   }

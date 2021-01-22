@@ -14,6 +14,7 @@ export default function Layout({ children, pageName }) {
           content="The best place one the 'net for Dan content"
         />
         <meta name="og:title" content={siteTitle} />
+        <title>{siteTitle}</title>
         <script
           src="https://kit.fontawesome.com/fbb51231af.js"
           crossOrigin="anonymous"
