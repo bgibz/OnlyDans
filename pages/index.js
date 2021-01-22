@@ -1,7 +1,9 @@
 import Layout from "../components/layout";
 import Feed from "../components/feed";
 import { getSortedPostsData } from "../lib/posts";
-import Link from "next/link";
+import Loading from "../components/loading";
+import Router from "next/router";
+import Image from "next/image";
 import cookie from "js-cookie";
 import useSWR from "swr";
 
@@ -19,7 +21,7 @@ export default function Home({ allPostsData }) {
     const res = await fetch(args);
     return res.json();
   });
-  if (!data) return <h1>Loading...</h1>;
+  if (!data) return <Loading></Loading>;
   let loggedIn = false;
   console.log(data);
   if (data.userName) {
@@ -32,6 +34,18 @@ export default function Home({ allPostsData }) {
       </Layout>
     );
   } else {
-    return <Link href="/login">Login</Link>;
+    Router.push("/login");
+    return (
+      <div className="h-screen w-screen grid grid-rows-3 justify-center content-end">
+        <div className="row-start-2">
+          <Image
+            src="/images/OnlyDans.png"
+            width={606}
+            height={220}
+            className="animate-none"
+          ></Image>
+        </div>
+      </div>
+    );
   }
 }
