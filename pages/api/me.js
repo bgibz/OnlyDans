@@ -2,7 +2,6 @@ const jwt = require("jsonwebtoken");
 const jwtSecret = "MySecret2021";
 
 export default (req, res) => {
-  console.log("Auth/me");
   if (req.method === "GET") {
     if (!("token" in req.cookies)) {
       res.status(401).json({ message: "Unable to auth" });
@@ -18,7 +17,6 @@ export default (req, res) => {
       }
     }
     if (decoded) {
-      console.log("success?");
       res.json(decoded);
       return;
     } else {
