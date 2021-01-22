@@ -28,6 +28,11 @@ h3 {
   position: relative;
   z-index: -1;
 }
+.profile-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
 .post_img {
   display: block;
   margin-left: auto;
