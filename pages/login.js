@@ -51,7 +51,7 @@ const Login = () => {
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="The best place one the 'net for Dan content"
+          content="The best place on the 'net for Dan content"
         />
         <meta name="og:title" content={siteTitle} />
         <script
@@ -59,7 +59,7 @@ const Login = () => {
           crossOrigin="anonymous"
         ></script>
       </Head>
-      <body>
+      <main>
         <div className="px-4">
           <div className="container mx-auto px-4">
             <div
@@ -81,11 +81,11 @@ const Login = () => {
               </p>
             </div>
             <hr />
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="pt-2">
               <div className="sm:grid sm:grid-cols-3 sm:gap-2">
                 <div className="sm:col-start-2">
-                  <div classname="flex flex-row sm:w-screen p-2">
-                    <div className="flex-row px-10 py-2">
+                  <div className="flex flex-row sm:w-full">
+                    <div className="flex-row px-10 py-2 w-full">
                       <input
                         name="username"
                         type="text"
@@ -96,8 +96,8 @@ const Login = () => {
                       />
                     </div>
                   </div>
-                  <div classname="flex flex-row sm:w-screen">
-                    <div className="flex-row px-10 py-2">
+                  <div className="flex flex-row sm:w-full">
+                    <div className="flex-row px-10 py-2 w-full">
                       <input
                         name="password"
                         type="password"
@@ -108,8 +108,8 @@ const Login = () => {
                       />
                     </div>
                   </div>
-                  <div classname="sm:flex sm:w-screen">
-                    <div classname="flex flex-row py-2">
+                  <div className="flex items-center justify-between">
+                    <div className="w-full flex-row py-2">
                       <div className="px-10">
                         <button className="bg-blue-400 text-gray-100 m-2 p-4 rounded-md font-display focus:outline-none w-full focus:shadow-outline hover:bg-blue-600">
                           Login
@@ -125,7 +125,7 @@ const Login = () => {
             </form>
           </div>
         </div>
-      </body>
+      </main>
     </>
   );
 };
