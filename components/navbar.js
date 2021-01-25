@@ -28,7 +28,7 @@ export default function Navbar() {
         <div>
           <Link href="/">
             <a className="cursor-pointer">
-              <FontAwesomeIcon icon={faHome} />
+              <FontAwesomeIcon icon={faHome} size="sm" />
               <span className="hide-mobile"> Home</span>
             </a>
           </Link>

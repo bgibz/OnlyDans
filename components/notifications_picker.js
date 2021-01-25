@@ -10,29 +10,58 @@ import React, { useState } from "react";
 export default function Notifications_Picker() {
   const [activeView, setActiveView] = useState("all");
 
+  function triggerActive(keyWord) {
+    setActiveView(keyWord);
+  }
+
   return (
     <div className="flex flex-row justify-between px-2">
-      <div id="All" className="text-blue-400">
-        <a className="cursor-pointer">
+      <div id="All" className={activeView === "All" ? "text-blue-400" : ""}>
+        <a
+          href="#all"
+          className="cursor-pointer"
+          onClick={() => triggerActive("All")}
+        >
           <FontAwesomeIcon icon={faGlobe} />
           <span className="hide-mobile"> All</span>
         </a>
       </div>
-      <div id="Subscribed">
-        <a className="cursor-pointer">
+      <div
+        id="Subscribed"
+        className={activeView === "Subscribed" ? "text-blue-400" : ""}
+      >
+        <a
+          href="#subscribed"
+          className="cursor-pointer"
+          onClick={() => triggerActive("Subscribed")}
+        >
           <FontAwesomeIcon icon={faUnlock} />
+          <span className="hide-mobile"> Subscribed</span>
         </a>
-        <span className="hide-mobile"> Subscribed</span>
       </div>
-      <div id="Tipped">
-        <a className="cursor-pointer">
+      <div
+        id="Tipped"
+        className={activeView === "Tipped" ? "text-blue-400" : ""}
+      >
+        <a
+          href="#tipped"
+          className="cursor-pointer"
+          onClick={() => triggerActive("Tipped")}
+        >
           <FontAwesomeIcon icon={faCreditCard} />
+          <span className="hide-mobile"> Tipped</span>
         </a>
-        <span className="hide-mobile"> Tipped</span>
       </div>
-      <div id="Promotions">
-        <FontAwesomeIcon icon={faTags} />
-        <a className="cursor-pointer">
+      <div
+        id="Promotions"
+        className={activeView === "Promotions" ? "text-blue-400" : ""}
+      >
+        <a
+          href="#promotions"
+          className="cursor-pointer"
+          onClick={() => triggerActive("Promotions")}
+        >
+          <FontAwesomeIcon icon={faTags} />
           <span className="hide-mobile"> Promotions</span>
         </a>
       </div>

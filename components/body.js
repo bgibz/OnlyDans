@@ -9,7 +9,7 @@ export default function Body({ children, pageName }) {
           <hr></hr>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-5 h-full">
+      <div className="grid grid-cols-1 sm:grid-cols-5">
         <div className="sm:col-start-2 sm:col-span-3 content-center">
           {children}
         </div>

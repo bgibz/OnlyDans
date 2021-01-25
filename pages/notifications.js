@@ -5,7 +5,7 @@ import Router from "next/router";
 import Image from "next/image";
 import useSWR from "swr";
 
-export default function Home({ allPostsData }) {
+export default function Home() {
   const { data, revalidate } = useSWR("/api/me", async function(args) {
     const res = await fetch(args);
     return res.json();

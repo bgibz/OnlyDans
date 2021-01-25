@@ -1,3 +1,7 @@
+#__next {
+  height: 0px;
+}
+
 @tailwind base;
 
 h1 {

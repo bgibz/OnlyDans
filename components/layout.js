@@ -6,7 +6,7 @@ export const siteTitle = "OnlyDans";
 
 export default function Layout({ children, pageName }) {
   return (
-    <div>
+    <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -26,6 +26,6 @@ export default function Layout({ children, pageName }) {
       <main className="content">
         <Body pageName={pageName}>{children}</Body>
       </main>
-    </div>
+    </>
   );
 }
