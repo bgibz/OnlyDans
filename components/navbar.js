@@ -27,15 +27,15 @@ export default function Navbar() {
         </div>
         <div>
           <Link href="/">
-            <a>
-              <FontAwesomeIcon icon={faHome} />
+            <a className="cursor-pointer">
+              <FontAwesomeIcon icon={faHome} size="sm" />
               <span className="hide-mobile"> Home</span>
             </a>
           </Link>
         </div>
         <div>
           <Link href="/notifications">
-            <a>
+            <a className="cursor-pointer">
               <FontAwesomeIcon icon={faBell} />
               <span className="hide-mobile"> Notifications</span>
             </a>
@@ -43,7 +43,7 @@ export default function Navbar() {
         </div>
         <div>
           <Link href="/messages">
-            <a>
+            <a className="cursor-pointer">
               <FontAwesomeIcon icon={faEnvelope} />
               <span className="hide-mobile"> Messages</span>
             </a>
@@ -51,7 +51,7 @@ export default function Navbar() {
         </div>
         <div>
           <Link href="/about">
-            <a>
+            <a className="cursor-pointer">
               <FontAwesomeIcon icon={faInfoCircle} />
               <span className="hide-mobile"> About</span>
             </a>

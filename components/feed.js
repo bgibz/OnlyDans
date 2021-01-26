@@ -44,21 +44,29 @@ export default function Feed({ allPostsData }) {
               key={data.id}
               id={"dan" + data.id}
             >
-              <div className="flex justify-between">
-                <div className="pl-2 sm:pl-0">
-                  <span className="font-bold">
-                    <a href="#" className="text-black">
-                      {author}
-                    </a>
-                  </span>{" "}
-                  <span className="text-grey-dark">{user}</span>{" "}
-                  <span className="text-grey-dark">&middot;</span>{" "}
-                  <span className="text-grey-dark">{date}</span>
+              <div className="inline-flex flex-row w-full justify-between items-stretch">
+                <div className="p-2 sm:pl-0 flex-grow flex-row flex">
+                  <img
+                    alt="Avatar"
+                    src="/images/profile.png"
+                    className="profile-img inline-block mx-2"
+                  ></img>
+                  <div className="flex-1 inline-block">
+                    <span className="font-bold flex-1 inline-block">
+                      <a href="#" className="text-black">
+                        {author}
+                      </a>
+                    </span>{" "}
+                    <span className="text-gray-400">{user}</span>{" "}
+                  </div>
+                  <span className="text-gray-400 flex-grow inline-block mr-2 text-right">
+                    {date}
+                  </span>
                 </div>
               </div>
               <div>
                 <div className="mb-4">
-                  <p className="mb-6 pl-2 sm:pl-0">{content}</p>
+                  <p className="mb-6 pl-2 sm:pl-0 pt-4">{content}</p>
                   {mediaformat == "jpg" ? (
                     <div>
                       {" "}

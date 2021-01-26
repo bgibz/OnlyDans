@@ -6,7 +6,7 @@ export const siteTitle = "OnlyDans";
 
 export default function Layout({ children, pageName }) {
   return (
-    <div>
+    <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -14,6 +14,7 @@ export default function Layout({ children, pageName }) {
           content="The best place one the 'net for Dan content"
         />
         <meta name="og:title" content={siteTitle} />
+        <title>{siteTitle}</title>
         <script
           src="https://kit.fontawesome.com/fbb51231af.js"
           crossOrigin="anonymous"
@@ -25,6 +26,6 @@ export default function Layout({ children, pageName }) {
       <main className="content">
         <Body pageName={pageName}>{children}</Body>
       </main>
-    </div>
+    </>
   );
 }
