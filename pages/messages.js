@@ -1,10 +1,12 @@
 import Layout from "../components/layout";
-import Inbox from "../components/inbox";
+import messageBox from "../components/messageBox";
 import Loading from "../components/loading";
 import Router from "next/router";
 import useSWR from "swr";
+import MessageBox from "../components/messageBox";
 
 export default function Messages() {
+  /*
   const { data, revalidate } = useSWR("/api/me", async function(args) {
     const res = await fetch(args);
     return res.json();
@@ -15,12 +17,12 @@ export default function Messages() {
   if (data.msg) {
     loggedIn = true;
   }
-  if (loggedIn) {
-    return (
-      <Layout pageName="Messages">
-        <Inbox></Inbox>
-      </Layout>
-    );
+  if (loggedIn) {*/
+  return (
+    <Layout pageName="Messages">
+      <MessageBox></MessageBox>
+    </Layout>
+  ); /*
   } else {
     Router.push("/login");
     return (
@@ -35,5 +37,5 @@ export default function Messages() {
         </div>
       </div>
     );
-  }
+  }*/
 }

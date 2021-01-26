@@ -22,7 +22,9 @@ h3 {
     display: none;
   }
 }
-
+.h-fill {
+  height: 75vh;
+}
 .navigation {
   height: 90px;
   top: 0;
@@ -35,6 +37,11 @@ h3 {
 .profile-img {
   height: 50px;
   width: 50px;
+  border-radius: 50%;
+}
+.msg-img {
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
 }
 .post_img {
