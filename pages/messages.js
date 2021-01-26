@@ -1,8 +1,9 @@
 import Layout from "../components/layout";
-import Inbox from "../components/inbox";
+import messageBox from "../components/messageBox";
 import Loading from "../components/loading";
 import Router from "next/router";
 import useSWR from "swr";
+import MessageBox from "../components/messageBox";
 
 export default function Messages() {
   const { data, revalidate } = useSWR("/api/me", async function(args) {
@@ -18,7 +19,7 @@ export default function Messages() {
   if (loggedIn) {
     return (
       <Layout pageName="Messages">
-        <Inbox></Inbox>
+        <MessageBox></MessageBox>
       </Layout>
     );
   } else {
