@@ -1,11 +1,30 @@
+import React, { useState } from "react";
 import Message from "./message";
+import ChatBox from "./chatBox";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 export default function MessageBox() {
+  const [userMsg, setUserMsg] = useState("");
+  //const [messages, setMessages] = useState("");
+  const messages = [
+    {
+      text: "What's up baby? I have some steamy new posts coming soon. 😉😉",
+      user: "Dan"
+    },
+    {
+      text: "I can't wait for you to see what I'm cooking up 👨‍🍳🔥🍆",
+      user: "Dan"
+    },
+    {
+      text:
+        "Had myself a day!😤 Changed so many lightbulbs out there. Now I'm ready to turn something else on 😉",
+      user: "Dan"
+    }
+  ];
   function handleSubmitMsg(e) {
     e.preventDefault();
-    console.log("Msg received");
+    alert("This is OnlyDans! Only Dan may send a message.");
   }
 
   return (
@@ -28,19 +47,27 @@ export default function MessageBox() {
         </div>
       </div>
       <div className="sm:col-span-2 col-span-4 border-solid border-2 border-opacity-40 border-blue-600 rounded relative bg-blue-50">
-        <Message
-          text="What's up baby? I have some steamy new
+        <ChatBox messages={messages} />
+        {/*<div id="messages">
+          <Message
+            text="What's up baby? I have some steamy new
                 posts coming soon. &#128521; &#x1F609;"
-        ></Message>
-        <Message text="I can't wait for you to see what I'm cooking up 👨‍🍳🔥🍆"></Message>
-        <Message text="Had myself a day!😤 Changed so many lightbulbs out there. Now I'm ready to turn something else on &#x1F609;"></Message>
-
+            user="Dan"
+          ></Message>
+          <Message text="I can't wait for you to see what I'm cooking up 👨‍🍳🔥🍆"></Message>
+          <Message text="Had myself a day!😤 Changed so many lightbulbs out there. Now I'm ready to turn something else on &#x1F609;"></Message>
+  </div>*/}
         <form
           className="absolute bottom-0 left-0 w-full flex"
           onSubmit={handleSubmitMsg}
         >
-          <input className="block text-blue-600 bg-blue-200 border-2 border-blue-200 rounded-full h-12 w-3/4 p-2"></input>
-          <button className="rounded-full bg-blue-600 h-12 w-12 absolute bottom-0 right-1">
+          <input
+            className="block text-blue-600 bg-blue-200 border-2 border-blue-200 rounded-full h-12 w-full p-2"
+            name="userMsg"
+            value={userMsg}
+            onChange={e => setUserMsg(e.target.value)}
+          ></input>
+          <button className="rounded-full bg-blue-600 h-12 w-12 absolute bottom-0 right-0">
             <FontAwesomeIcon
               icon={faPaperPlane}
               className="text-white mr-1"

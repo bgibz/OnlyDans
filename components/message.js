@@ -1,4 +1,9 @@
-export default function Message({ text }) {
+export default function Message({ text, user }) {
+  let msgClass = "bg-gray-300 bg-opacity-75 rounded-lg m-2 w-3/4";
+  if (user === "Dan") {
+    msgClass = "bg-blue-300 bg-opacity-75 rounded-lg m-2 w-3/4";
+  }
+
   return (
     <div className="text-left m-2 flex flex-row">
       <div className="flex-none pt-1">
@@ -9,8 +14,8 @@ export default function Message({ text }) {
         ></img>
       </div>
       <div className="flex-initial">
-        <div className="bg-blue-300 bg-opacity-75 rounded-lg m-2 w-3/4">
-          <p className="ml-8">
+        <div className={msgClass}>
+          <p className="sm:ml-8 ml-4">
             {"  "}
             {text}
           </p>
