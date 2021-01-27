@@ -23,8 +23,8 @@ export default function Home({ allPostsData }) {
   });
   if (!data) return <Loading></Loading>;
   let loggedIn = false;
-  console.log(data);
-  console.log(data.msg);
+  //console.log(data);
+  //console.log(data.msg);
   if (data.msg) {
     loggedIn = true;
   }
@@ -35,7 +35,7 @@ export default function Home({ allPostsData }) {
       </Layout>
     );
   } else {
-    console.log("redirect");
+    //console.log("redirect");
     Router.push("/login");
     return (
       <div className="h-screen w-screen grid grid-rows-3 justify-center content-end">

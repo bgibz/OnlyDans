@@ -4,7 +4,7 @@ const jwtSecret = "MySecret2021";
 export default (req, res) => {
   if (req.method === "GET") {
     if (!("token" in req.cookies)) {
-      res.status(401).json({ message: "Unable to auth" });
+      res.status(401).json({ message: "Unable to auth, no token to decode" });
       return;
     }
     let decoded;

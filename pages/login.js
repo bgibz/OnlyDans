@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Router from "next/router";
+import { useRouter } from "next/router";
 import cookie from "js-cookie";
 import Head from "next/head";
 import Image from "next/image";
@@ -12,6 +12,7 @@ const Login = () => {
   const [loginError, setLoginError] = useState("");
   const [username, setUser] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -39,8 +40,14 @@ const Login = () => {
         }
         if (data && data.token) {
           //set cookie
-          cookie.set("token", data.token, { expires: 2 });
-          Router.push("/");
+          cookie.set("token", data.token, { expires: 1 });
+          if (cookie.get("token")) {
+            router.push("/");
+            console.log("Welcome to OnlyDans");
+          } else {
+            setLoginError("Something went wrong, please try to login again.");
+          }
+          //Router.push("/");
         }
       })
       .catch(e => {

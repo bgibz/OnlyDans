@@ -12,12 +12,11 @@ export default function Home() {
   });
   if (!data) return <Loading></Loading>;
   let loggedIn = false;
-  console.log(data);
-  console.log(data.msg);
+  //console.log(data);
+  //console.log(data.msg);
   if (data.msg) {
     loggedIn = true;
   }
-  loggedIn = true;
   if (loggedIn) {
     return (
       <Layout pageName="Notifications">

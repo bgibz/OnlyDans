@@ -1,6 +1,7 @@
 import Layout from "../components/layout";
 import Loading from "../components/loading";
 import Router from "next/router";
+import Image from "next/image";
 import useSWR from "swr";
 
 export default function About() {
@@ -10,7 +11,7 @@ export default function About() {
   });
   if (!data) return <Loading></Loading>;
   let loggedIn = false;
-  console.log(data);
+  //console.log(data);
   if (data.msg) {
     loggedIn = true;
   }

@@ -3,7 +3,7 @@ import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 
 export default function ChatAlert({ action }) {
   function handleClick(e) {
-    console.log("Clicked");
+    //console.log("Clicked");
     action();
   }
   return (

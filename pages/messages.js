@@ -2,6 +2,7 @@ import Layout from "../components/layout";
 import messageBox from "../components/messageBox";
 import Loading from "../components/loading";
 import Router from "next/router";
+import Image from "next/image";
 import useSWR from "swr";
 import MessageBox from "../components/messageBox";
 
@@ -12,7 +13,7 @@ export default function Messages() {
   });
   if (!data) return <Loading></Loading>;
   let loggedIn = false;
-  console.log(data);
+  //console.log(data);
   if (data.msg) {
     loggedIn = true;
   }
