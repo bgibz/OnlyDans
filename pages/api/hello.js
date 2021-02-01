@@ -12,7 +12,7 @@ async function delay(time) {
 }
 
 export default async (req, res) => {
-  await delay(3000);
+  await delay(2000);
   res.statusCode = 200;
   res.json({ msg: "Hello" });
 };
