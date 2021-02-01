@@ -43,7 +43,7 @@ const Login = () => {
           cookie.set("token", data.token, { expires: 1 });
           if (cookie.get("token")) {
             router.push("/");
-            console.log("Welcome to OnlyDans");
+            console.log("Welcome to OnlyDans :)");
           } else {
             setLoginError("Something went wrong, please try to login again.");
           }
