@@ -6,8 +6,6 @@ import Image from "next/image";
 import Loading from "../components/loading";
 import useSWR from "swr";
 
-export const siteTitle = "OnlyDans";
-
 const Login = () => {
   const [loginError, setLoginError] = useState("");
   const [username, setUser] = useState("");
@@ -70,12 +68,12 @@ const Login = () => {
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.ico" />
         <meta
           name="description"
           content="The best place on the 'net for Dan content"
         />
-        <meta name="og:title" content={siteTitle} />
+        <meta name="og:title" content="OnlyDans" />
         <script
           src="https://kit.fontawesome.com/fbb51231af.js"
           crossOrigin="anonymous"

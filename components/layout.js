@@ -8,7 +8,7 @@ export default function Layout({ children, pageName }) {
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.ico" />
         <meta
           name="description"
           content="The best place one the 'net for Dan content"

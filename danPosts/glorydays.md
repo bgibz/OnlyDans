@@ -7,4 +7,4 @@ media: "/media/old_dan.jpg"
 likes: 12
 ---
 
-Just thinking back to the glory days with the sweet, sweet, wings. Why did I ever cut my hair?
+Just thinking back to the glory days with these sexy wings. Why did I ever cut my hair?
