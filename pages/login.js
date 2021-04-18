@@ -8,14 +8,21 @@ import useSWR from "swr";
 
 const Login = () => {
   const [loginError, setLoginError] = useState("");
-  const [username, setUser] = useState("");
-  const [password, setPassword] = useState("");
+  //const [username, setUser] = useState("");
+  //const [password, setPassword] = useState("");
   const router = useRouter();
 
-  function handleSubmit(e) {
+  function login(e){
     e.preventDefault();
+    //TODO: enter the site
+    let username = "zapzap";
+    let password = "sparky";
+    handleSubmit(username, password)
+  }
+
+  function handleSubmit(username, password) {
     if (!username || !password) {
-      setLoginError("Please provide a username and password");
+      setLoginError("An error occured, please try again");
       return;
     }
     //call api
@@ -97,43 +104,35 @@ const Login = () => {
             </div>
             <div className="flex flex-row pb-4">
               <p className="text-center w-full">
-                Login to get the latest from Dan!
+                You must be 18+ to view this content
               </p>
             </div>
             <hr />
-            <form onSubmit={handleSubmit} className="pt-2">
+            <form className="pt-2">
               <div className="sm:grid sm:grid-cols-3 sm:gap-2">
                 <div className="sm:col-start-2">
                   <div className="flex flex-row sm:w-full">
-                    <div className="flex-row px-10 py-2 w-full">
-                      <input
-                        name="username"
-                        type="text"
-                        value={username}
-                        placeholder="Username"
-                        onChange={e => setUser(e.target.value)}
-                        className="border border-gray-300 rounded-md mx-2 p-2 w-full"
-                      />
-                    </div>
-                  </div>
-                  <div className="flex flex-row sm:w-full">
-                    <div className="flex-row px-10 py-2 w-full">
-                      <input
-                        name="password"
-                        type="password"
-                        value={password}
-                        placeholder="Password"
-                        onChange={e => setPassword(e.target.value)}
-                        className="border border-gray-300 rounded-md mx-2 p-2 w-full"
-                      />
+                    <div className="w-full flex-row py-2 px-10">
+                      <p>
+                        <strong>OnlyDans</strong> features explicit content of HOT Dan's in your neighbourhood. Are you over <strong>18</strong> and willing to see explicit content?
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
                     <div className="w-full flex-row py-2">
                       <div className="px-10">
-                        <button className="bg-blue-400 text-gray-100 m-2 p-4 rounded-md font-display focus:outline-none w-full focus:shadow-outline hover:bg-blue-600">
-                          Login
+                        <button onClick={login} className="bg-blue-400 text-gray-100 m-2 p-4 rounded-md font-display focus:outline-none w-full focus:shadow-outline hover:bg-blue-600">
+                          Yes, I wanted to see the latest from Dan
                         </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="w-full flex-row py-2">
+                      <div className="px-10 text-center">
+                        <a href="https://www.churchschicken.ca/british-columbia/coupons/" className="text-blue-400 m-2 p-4 font-display  w-full">
+                          No, get me out of here
+                        </a>
                       </div>
                     </div>
                   </div>
