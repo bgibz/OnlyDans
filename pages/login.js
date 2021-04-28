@@ -122,7 +122,7 @@ const Login = () => {
                     <div className="w-full flex-row py-2">
                       <div className="px-10">
                         <button onClick={login} className="bg-blue-400 text-gray-100 m-2 p-4 rounded-md font-display focus:outline-none w-full focus:shadow-outline hover:bg-blue-600">
-                          Yes, I wanted to see the latest from Dan
+                          Yes, I want to see the latest from Dan
                         </button>
                       </div>
                     </div>
