@@ -3,7 +3,7 @@ user: "@Dan"
 author: "Dan"
 date: "2021-04-11"
 id: 11
-media: "/media/DanJay.jpg"
+media: "/media/DanJay.png"
 likes: 8
 ---
 
